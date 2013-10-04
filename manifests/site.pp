@@ -57,6 +57,8 @@ node default {
   include git
   include hub
   include nginx
+  include postgresql
+  postgresql::db { 'mydb': }
 
   # fail if FDE is not enabled
   if $::root_encrypted == 'no' {
